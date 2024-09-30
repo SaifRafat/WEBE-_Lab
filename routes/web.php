@@ -13,4 +13,5 @@ use App\Http\Controllers\BookController;
 |
 */
 
-Route::get('/', [BookController::class,"index"])->name("books.index");
+Route::get('/books', [BookController::class,"index"])->name("books.index");
+Route::get('/{books}/show', [BookController::class,"show"])->name("books.show");

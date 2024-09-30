@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index(): string
+    public function index()
     {
-        $books = Book::whereBetween('price', [10, 30])
-            ->orderBy('price')
-            ->get();
+        $books = Book::paginate(10);
         return view("books.index")->with("books", $books);
+    }
+    public function show($books)
+    {
+         $book = Book::find($books);
+        return view("books.show")->with("book", $book);
     }
 }
