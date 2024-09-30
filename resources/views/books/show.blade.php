@@ -2,8 +2,10 @@
 
 
 @section('page-content')
+
+
 <div class="container">
-<a class="btn btn-success" href="{{ route('books.index') }}">Back to Book List</a>
+<a class="btn btn-primary" href="{{ route('books.index') }}">Back to Book List</a>
     <h1>Book Details</h1>
     <table class="table table-striped table-bodered">
         <tr>
