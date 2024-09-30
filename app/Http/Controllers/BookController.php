@@ -8,7 +8,9 @@ class BookController extends Controller
 {
     public function index(): string
     {
-        $books = Book::all();
+        $books = Book::whereBetween('price', [10, 30])
+            ->orderBy('price')
+            ->get();
         return view("books.index")->with("books", $books);
     }
 }
